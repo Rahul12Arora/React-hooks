@@ -40,11 +40,7 @@ function App() {
 1.)useEffect accepts a callback function (called the 'effect' function), which will by default run every time the component re-renders.</br>
 2.)It runs once when the component is mounted.
 3.)useEffect lets us conditionally perform effects with the dependencies array, The dependencies array is the second argument passed to useEffect,If any one of the values in the array changes, the effect function runs again.
-4.)If no values are included in the dependencies array, useEffect will only run on component mount and unmount.</br>
-3.)When we create a state variable, we must provide it a default value (which can be any data type eg - like number, String or object).</br>
-4.)We get the state variable as the first value in an array, which we can destructure and declare with const</br>
-5.)The second value of the array is a function which we can use to change the value of our state variable, we pass the desired value as an argument to this function to update our state variable.</br>
-6.)When ever our state variable changes/updates, our react UI also updates to reflect those changes.
+4.)If no values are included in the dependencies array i.e empty array, useEffect will only run on component mount and unmount.</br>
 
 ```
 function App() {
