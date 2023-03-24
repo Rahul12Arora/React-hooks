@@ -81,4 +81,8 @@ function App() {
 }
 ```
 
+<h2>useContext</h2>
 
+Intro - useContext Helps Us Avoid Prop Drilling. In React, we want to avoid the following problem of creating multiple props to pass data down two or more levels from a parent component. In some cases, it is fine to pass props through multiple components, but it is redundant to pass props through components which do not need it.
+
+1.)
