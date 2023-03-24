@@ -108,3 +108,44 @@ function User() {
   return <h1>{value}</h1>;
 }
 ```
+
+**custom example boilerplate**
+
+```
+import React from 'react';
+import { useEffect, useState } from "react";
+import Body from './Body';
+
+export const counterData = React.createContext();
+function App() {
+
+  const [counter, setcounter] = useState(0);
+
+  return (
+    <counterData.Provider value= {[counter, setcounter]}>
+    <div className="App">
+      <Body></Body>
+    </div>
+    </counterData.Provider>
+  );
+}
+
+export default App;
+```
+**used here**
+```
+import React, { useContext } from 'react'
+import { counterData } from './App'
+import './Body.css';
+
+function Body() {
+  
+  const [count,setcount] = useContext(counterData);
+  if(count==10) setcount(20);
+  return (
+    <div className='cn'>{count}</div>
+  )
+}
+
+export default Body;
+```
