@@ -85,4 +85,26 @@ function App() {
 
 Intro - useContext Helps Us Avoid Prop Drilling. In React, we want to avoid the following problem of creating multiple props to pass data down two or more levels from a parent component. In some cases, it is fine to pass props through multiple components, but it is redundant to pass props through components which do not need it.
 
-1.)
+1.)We create & export a variable that is React.createContext();</br>
+2.)We wrap our function in this variable component & assign the value attribute what we want to pass down.</br>
+3.)We now import UserContext in the component we want to use the data in & pass it in useContext() Hook.
+
+```
+import React from 'react';
+
+export const UserContext = React.createContext();
+
+export default function App() {
+  return (
+    <UserContext.Provider value="Reed">
+      <User />
+    </UserContext.Provider>
+  )
+}
+
+function User() {
+  const value = React.useContext(UserContext);  
+    
+  return <h1>{value}</h1>;
+}
+```
