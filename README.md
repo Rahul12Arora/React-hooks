@@ -6,7 +6,7 @@ React hooks
 **React hooks should only be directly called in the top level of a function component, it doesn't work inside regular js functions, nested functions or loop**</br>
 
 
-<h3>useState</h3>
+<h2>useState</h2>
 
 1.)The useState hook allows us to create state variables in a React function component.</br>
 2.)State allows us to access and update certain values in our components over time</br>
