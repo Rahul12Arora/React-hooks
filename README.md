@@ -110,6 +110,7 @@ function User() {
 ```
 
 **custom example boilerplate**
+**context created here**
 
 ```
 import React from 'react';
@@ -132,7 +133,7 @@ function App() {
 
 export default App;
 ```
-**used here**
+**context data used here**
 ```
 import React, { useContext } from 'react'
 import { counterData } from './App'
