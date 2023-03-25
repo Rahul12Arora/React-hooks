@@ -155,6 +155,11 @@ export default Body;
 
 <h3>Routes</h3>
 
+install react router in your react app
+```
+npm i react-router-dom
+```
+
 1.)Firstly we wrap the app component in <BroswerRouter>
   
 ```
