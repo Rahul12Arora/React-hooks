@@ -83,11 +83,11 @@ function App() {
 
 <h2>useContext</h2>
 
-Intro - useContext Helps Us Avoid Prop Drilling. In React, we want to avoid the following problem of creating multiple props to pass data down two or more levels from a parent component. In some cases, it is fine to pass props through multiple components, but it is redundant to pass props through components which do not need it.
+Intro - useContext Helps Us Avoid Prop Drilling. In React, we want to avoid the following problem of creating multiple props to pass data down two or more levels from a parent component. In some cases, it is fine to pass props through multiple components, but it is redundant to pass props through components which do not need it.</br>
 
 1.)We create & export a variable that is React.createContext();</br>
 2.)We wrap our function in this variable component & assign the value attribute what we want to pass down.</br>
-3.)We now import UserContext in the component we want to use the data in & pass it in useContext() Hook.
+3.)We now import UserContext in the component we want to use the data in & pass it in useContext() Hook.</br>
 
 ```
 import React from 'react';
@@ -133,7 +133,9 @@ function App() {
 
 export default App;
 ```
+
 **context data used here**
+
 ```
 import React, { useContext } from 'react'
 import { counterData } from './App'
@@ -149,4 +151,64 @@ function Body() {
 }
 
 export default Body;
+```
+
+<h3>Routes</h3>
+
+1.)Firstly we wrap the app component in <BroswerRouter>
+  
+```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+```
+2.)Now we set all our components in different <route> tags, that are enclosed within a single <routes> tag.</br>
+Note - only the component within the <routes> tag rerenders as we select & not the whole page.</br>
+3.)Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed.</br>
+4.)Path= "/mycomponent" is the path we give to that component.</br>
+5.)Linking - now to redirect we use <Link to={"/mycomponent2"}> tag, it renders that particular component inside <routes> tag in that whole component.(swaps things without refreshing our entire application)</br>
+
+```
+import React from 'react';
+import { useEffect, useState } from "react";
+import { Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
+import Blogs from './pages/Blogs';
+import Contact from './pages/Contact';
+
+export const counterData = React.createContext();
+function App() {
+
+  const [counter, setcounter] = useState(0);
+
+  return (
+    <>
+    <ul>
+      <li><Link to={"/"}>Home page pe le chalo</Link></li>
+      <li><Link to={"/blogs"}>Blogs pe chalo</Link></li>
+      <li><Link to={"/contact"}>contact pe chalo</Link></li>
+    </ul>
+    <Routes>
+      <Route path="/" element={<Home></Home>}></Route>  
+      <Route path="/blogs" element={<Blogs></Blogs>}></Route>  
+      <Route path="/contact" element={<Contact></Contact>}></Route>  
+    </Routes>
+    </>
+  );
+}
+
+export default App;
+
 ```
