@@ -212,3 +212,23 @@ function App() {
 export default App;
 
 ```
+
+6.)Routing & passing url data with useParams()</br>
+
+```
+//in app component
+<Route path="/blogs/:id" element={<Blogs></Blogs>}></Route> 
+
+
+import React from 'react'
+import { useParams } from 'react-router-dom'
+
+function Blogs() {
+    const {id} = useParams()
+  return (
+    <div>Blogs {id}</div>
+  )
+}
+
+export default Blogs
+```
