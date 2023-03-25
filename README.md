@@ -292,3 +292,25 @@ function Blogs() {
 
 export default Blogs
 ```
+
+<h2>useReducer</h2>
+
+```
+function reducer(state, action){
+  return { count : state.count + 1 }
+}
+function App() {
+
+  const [state, dispatch] = useReducer(reducer, {count : 0})
+  function increment(){
+    dispatch()
+  }
+  return (
+    <>
+    <button>-</button>
+    <span>{state.count}</span>
+    <button onClick={increment}>+</button>
+    </>
+  );
+}
+```
