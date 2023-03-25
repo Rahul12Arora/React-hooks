@@ -314,3 +314,9 @@ function App() {
   );
 }
 ```
+
+<h2>Miscallaneous</h2>
+nvm - node version manager</br>
+To install node version - node install 18.15.0</br>
+To use another node version - node use 19.15.0</br>
+To see the versions avaialble on your machine - node ls</br>
