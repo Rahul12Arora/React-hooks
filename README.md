@@ -232,3 +232,63 @@ function Blogs() {
 
 export default Blogs
 ```
+
+<h3>Dynamic Routing</h3>
+
+**App**
+
+```
+return (
+    <>
+    <ul>
+      <li><Link to={"/"}>Home page pe le chalo</Link></li>
+      <li><Link to={"/blogs"}>BlogList pe chalo</Link></li>
+      <li><Link to={"/contact"}>contact pe chalo</Link></li>
+    </ul>
+    <Routes>
+      {/* Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed*/}
+      <Route path="/" element={<Home></Home>}></Route>  
+      <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>  
+      <Route path="/blogs" element={<BlogList></BlogList>}></Route>  
+      <Route path="/contact" element={<Contact></Contact>}></Route>  
+    </Routes>
+    </>
+  );
+```
+
+**BlogList**
+```
+import React from 'react'
+import { Route, Routes, Link } from 'react-router-dom';
+function BlogList() {
+  return (
+    <>
+    <h1>
+        BookList
+    </h1>
+    <Link to={"/blogs/1"}>Book1</Link>
+    <Link to={"/blogs/2"}>Book2</Link>
+    </>
+  )
+}
+
+export default BlogList
+```
+
+**Book/Blog**
+
+```
+import React from 'react'
+import { useParams } from 'react-router-dom'
+
+function Blogs() {
+    const {id} = useParams()
+  return (
+    <>
+    <div>Actual Blog {id}</div>
+    </>
+  )
+}
+
+export default Blogs
+```
