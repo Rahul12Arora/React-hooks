@@ -325,3 +325,54 @@ nvm - node version manager</br>
 To install node version - node install 18.15.0</br>
 To use another node version - node use 19.15.0</br>
 To see the versions avaialble on your machine - node ls</br>
+
+<h2>Pass Data as props</h2>
+
+```
+1.)Pass data as an object
+function parent(){
+const data = {
+    name: "Rahul",
+    age: 22
+  }
+
+  return (
+    <Header person={data}></Header>
+  );
+}
+
+2.) Acess in two ways
+
+function Child(props) {
+
+  const {name, age} = props.person;
+  return (
+    <>
+    <div>{name}</div>
+    <div>{props.person.name}</div>  // 2nd way
+    </>
+  )
+}
+```
+
+```
+1.) Parent side
+return (
+    <Header {...data}></Header>
+  );
+
+2.) Child side
+function Child({name, age}) {
+  return (
+    <div>{name}</div>
+  )
+}
+or
+
+function Child(props){
+const {name, age} = props;          //props.data is not needed because it was never sent as data in the first place
+   return(
+   <div>{name}</div>
+   )
+}
+```
