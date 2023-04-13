@@ -160,7 +160,7 @@ install react router in your react app
 npm i react-router-dom
 ```
 
-1.)Firstly we wrap the app component in <BroswerRouter>
+1.)Firstly we wrap the index component in <BroswerRouter>
   
 ```
 import React from 'react';
