@@ -376,3 +376,8 @@ const {name, age} = props;          //props.data is not needed because it was ne
    )
 }
 ```
+<h2>useLocation</h2>
+
+
+
+<h2>useMemo</h2>
