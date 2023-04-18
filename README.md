@@ -376,6 +376,15 @@ const {name, age} = props;          //props.data is not needed because it was ne
    )
 }
 ```
+
+<h1>How to render list of components inside react return</h1>
+
+```
+<select>
+{genres.map((item)=> { return <option>{item.title}</option> })}
+</select>
+```
+
 <h2>useLocation</h2>
 
 
