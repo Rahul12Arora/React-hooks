@@ -383,6 +383,10 @@ const {name, age} = props;          //props.data is not needed because it was ne
 <select>
 {genres.map((item)=> { return <option>{item.title}</option> })}
 </select>
+
+------------------------------------------------------------------
+
+{[1,2,3,4,5,6,7,8,9,10].map((song,i)=>{return <SongCard key={song.key} song={song} i={i}></SongCard>})}
 ```
 
 <h2>useLocation</h2>
