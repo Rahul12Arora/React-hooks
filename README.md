@@ -298,7 +298,7 @@ function Blogs() {
 export default Blogs
 ```
 
-<h2>useLocation</h2>
+<h2>useNavigate</h2>
 
 ```
 import { useNavigate } from 'react-router-dom';
@@ -455,17 +455,17 @@ export default Login;
   
  ```
 
-  <p> where i want to use properties</p>
+<p> where i want to use properties</p>
 
-  ```
+```
   import { useLocation } from "react-router-dom";
   
-   const location =useLocation();
+   const location = useLocation();
 
-  const flag =location.state.loginflag;                          //yahan pe recieve kar liya
+  const flag =location.state.loginflag;                          //yahan pe recieve kar liya; (state is sent with navigate("/" ,{state:{loginflag}});
   // flag we can use here
   
-  ```
+```
   
 
 
