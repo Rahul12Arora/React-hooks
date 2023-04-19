@@ -391,6 +391,76 @@ const {name, age} = props;          //props.data is not needed because it was ne
 
 <h2>useLocation</h2>
 
+```
+
+
+import { Link ,useNavigate} from "react-router-dom";
+import MyOrder from "./MyOrder";
+
+function Login() {
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+
+  const navigate=useNavigate();
+  
+  let loginflag=false;
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+
+    // console.log(JSON.stringify({email:credentials.email,password:credentials.password}))
+    const response=await fetch(`${process.env.REACT_APP_BACK_URL}/api/login-user`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({email:credentials.email,password:credentials.password})
+    })
+    const json =await response.json();
+    console.log(json)
+   
+
+    if(!json.success){
+      loginflag=false;
+      alert("Enter Valid Credantials")
+    }
+    if(json.success){
+       loginflag =true;
+      localStorage.setItem("userEmail",credentials.email);
+      localStorage.setItem("authToken",json.authToken);
+      // console.log(localStorage.getItem("authToken"));
+      navigate("/" ,{state:{loginflag}});
+    }
+
+  }
+
+  const onchange=(e)=>{
+    setCredentials({...credentials,[e.target.name]:e.target.value})
+  }
+
+  return (
+    <>
+        <Form onSubmit={handleSubmit}>
+    </>
+  );
+}
+
+export default Login;
+  
+  
+ ```
+
+  <p> where i want to use properties</p>
+
+  ```
+  import { useLocation } from "react-router-dom";
+  
+   const location =useLocation();
+
+  const flag =location.state.loginflag;
+  // flag we can use here
+  
+  ```
+  
 
 
 <h2>useMemo</h2>
@@ -442,3 +512,5 @@ store.dispatch({ type: 'counter/incremented' })
 store.dispatch({ type: 'counter/decremented' })
 // {value: 1}
 ```
+
+
