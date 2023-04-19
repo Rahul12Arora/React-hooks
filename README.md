@@ -425,31 +425,16 @@ function Login() {
   
   let loginflag=false;
 
-  const handleSubmit=async(e)=>{
-    e.preventDefault();
-
-    // console.log(JSON.stringify({email:credentials.email,password:credentials.password}))
-    const response=await fetch(`${process.env.REACT_APP_BACK_URL}/api/login-user`,{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body:JSON.stringify({email:credentials.email,password:credentials.password})
-    })
-    const json =await response.json();
-    console.log(json)
-   
-
     if(!json.success){
       loginflag=false;
       alert("Enter Valid Credantials")
     }
     if(json.success){
-       loginflag =true;
+      loginflag =true;
       localStorage.setItem("userEmail",credentials.email);
       localStorage.setItem("authToken",json.authToken);
       // console.log(localStorage.getItem("authToken"));
-      navigate("/" ,{state:{loginflag}});
+      navigate("/" ,{state:{loginflag}});                          //yahan se bhej diya
     }
 
   }
@@ -477,7 +462,7 @@ export default Login;
   
    const location =useLocation();
 
-  const flag =location.state.loginflag;
+  const flag =location.state.loginflag;                          //yahan pe recieve kar liya
   // flag we can use here
   
   ```
@@ -535,4 +520,21 @@ store.dispatch({ type: 'counter/decremented' })
 // {value: 1}
 ```
 
+<h2>Formsubmit</h2>
 
+```
+const handleSubmit=async(e)=>{
+    e.preventDefault();
+
+    // console.log(JSON.stringify({email:credentials.email,password:credentials.password}))
+    const response=await fetch(`${process.env.REACT_APP_BACK_URL}/api/login-user`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({email:credentials.email,password:credentials.password})
+    })
+    const json =await response.json();
+    console.log(json)
+   
+```
