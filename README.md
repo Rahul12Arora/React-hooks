@@ -298,6 +298,27 @@ function Blogs() {
 export default Blogs
 ```
 
+<h2>useLocation</h2>
+
+```
+import { useNavigate } from 'react-router-dom';
+
+function MyComponent() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/some-route');
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Go to Some Route
+    </button>
+  );
+}
+```
+
+
 <h2>useReducer</h2>
 
 ```
@@ -464,6 +485,7 @@ export default Login;
 
 
 <h2>useMemo</h2>
+
 
 # REDUX
 
