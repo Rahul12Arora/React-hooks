@@ -227,11 +227,11 @@ In this example, the `BrowserRouter` component is used to wrap the entire applic
 
 React Router DOM also provides additional features, such as the ability to pass URL parameters to your routes, use nested routes, and handle programmatic navigation. Overall, React Router DOM is a powerful library that makes it easy to implement client-side routing in React applications.
 
-2.)Now we set all our components in different <route> tags, that are enclosed within a single <routes> tag.</br>
-Note - only the component within the <routes> tag rerenders as we select & not the whole page.</br>
-3.)Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed.</br>
-4.)Path= "/mycomponent" is the path we give to that component.</br>
-5.)Linking - now to redirect we use <Link to={"/mycomponent2"}> tag, it renders that particular component inside <routes> tag in that whole component.(swaps things without refreshing our entire application)</br>
+2.)Now we set all our components in different <route> tags, that are enclosed within a single <routes> tag.</br></br>
+Note - only the component within the <routes> tag rerenders as we select & not the whole page.</br></br>
+3.)Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed.</br></br>
+4.)Path= "/mycomponent" is the path we give to that component.</br></br>
+5.)Linking - now to redirect we use <Link to={"/mycomponent2"}> tag, it renders that particular component inside <routes> tag in that whole component.(swaps things without refreshing our entire application)</br></br>
 
 ```
 import React from 'react';
