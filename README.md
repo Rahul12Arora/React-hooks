@@ -171,35 +171,34 @@ The main components provided by React Router DOM are:
 
 - `Route`: This component defines a mapping between a URL path and a React component to be rendered when that path is accessed. You can pass in additional props to the `Route` component to configure its behavior, such as whether the route should be exact or not.
 
-- `Switch`: This component renders the first `Route` that matches the current URL. It's useful for rendering exclusive routes, where only one route should be matched at a time.
+- `Routes`: This component renders the first `Route` that matches the current URL. It's useful for rendering exclusive routes, where only one route should be matched at a time.
 
-- `Link`: This component creates a hyperlink to another route in your application. It generates an HTML `a` tag with the appropriate URL and automatically updates the browser's history when clicked.
+- In ReactJS, there are three different kinds of links. These are NavLink, Link, and a links, and they all serve different purposes.
 
-- `NavLink`: This component is similar to the `Link` component but adds some extra features, such as the ability to apply an active class to the link when its corresponding route is active.
+NavLink: This is used when you want to highlight the current or active link. This is used with the activeClassName attribute, which enables it. See the example below.
 
-Using these components, you can define the routing configuration for your React application. For example, you might define a set of routes that map to different pages in your application:
+``` <NavLink to="/home" activeClassName="active" >Home</NavLink><br/> ```
+The CSS can then be styled according to your choice inside the App.css file. Let’s make the text color red to make it simple.
 
-```jsx
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+```
+.active{
+  color:red;
+} 
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </BrowserRouter>
-  );
-}
 ```
 
-In this example, the `BrowserRouter` component is used to wrap the entire application, providing routing functionality. The `Switch` component ensures that only one route is matched at a time, and the `Route` components define the mapping between the URL path and the component to render.
+Link: This is used when there is no special style or highlighting of your link. See the example below.
 
-React Router DOM also provides additional features, such as the ability to pass URL parameters to your routes, use nested routes, and handle programmatic navigation. Overall, React Router DOM is a powerful library that makes it easy to implement client-side routing in React applications.
+``` <Link to="/not-active">Not Active </Link><br/> ```
 
+Note: Use the NavLink or Link when you need links that are routing to pages that belong to your application. For external links, a is preferrable.
+
+The anchor tag a: This is used for links outside your webpage.
+See the example below.
+```<a href="https://www.educative.io/edpresso">Visit Edpresso </a> ```
+
+
+Using these components, you can define the routing configuration for your React application. For example, you might define a set of routes that map to different pages in your application:
 
 1.)Firstly we wrap the index component in <BroswerRouter>
   
@@ -219,11 +218,6 @@ root.render(
   </React.StrictMode>
 );
 ```
-2.)Now we set all our components in different <route> tags, that are enclosed within a single <routes> tag.</br>
-Note - only the component within the <routes> tag rerenders as we select & not the whole page.</br>
-3.)Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed.</br>
-4.)Path= "/mycomponent" is the path we give to that component.</br>
-5.)Linking - now to redirect we use <Link to={"/mycomponent2"}> tag, it renders that particular component inside <routes> tag in that whole component.(swaps things without refreshing our entire application)</br>
 
 ```
 import React from 'react';
@@ -258,6 +252,18 @@ function App() {
 export default App;
 
 ```
+In this example, the `BrowserRouter` component is used to wrap the entire application, providing routing functionality. The `Routes` component ensures that only one route is matched at a time, and the `Route` components define the mapping between the URL path and the component to render.
+
+React Router DOM also provides additional features, such as the ability to pass URL parameters to your routes, use nested routes, and handle programmatic navigation. Overall, React Router DOM is a powerful library that makes it easy to implement client-side routing in React applications.
+
+
+
+2.)Now we set all our components in different <route> tags, that are enclosed within a single <routes> tag.</br>
+Note - only the component within the <routes> tag rerenders as we select & not the whole page.</br>
+3.)Path = "/" tells us that this is the root component of this entity, element atrribute takes the actual jsx or component to be displayed.</br>
+4.)Path= "/mycomponent" is the path we give to that component.</br>
+5.)Linking - now to redirect we use <Link to={"/mycomponent2"}> tag, it renders that particular component inside <routes> tag in that whole component.(swaps things without refreshing our entire application)</br>
+
 
 6.)Routing & passing url data with useParams()</br>
 
