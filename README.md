@@ -177,7 +177,8 @@ The main components provided by React Router DOM are:
 
 - NavLink: This is used when you want to highlight the current or active link. This is used with the activeClassName attribute, which enables it. See the example below.
 
-``` <NavLink to="/home" activeClassName="active" >Home</NavLink><br/> ```
+``` <NavLink to="/home" activeClassName="active" >Home</NavLink>```
+
 The CSS can then be styled according to your choice inside the App.css file. Let’s make the text color red to make it simple.
 
 ```
@@ -187,18 +188,17 @@ The CSS can then be styled according to your choice inside the App.css file. Let
 
 ```
 
-Link: This is used when there is no special style or highlighting of your link. See the example below.
+  - Link: This is used when there is no special style or highlighting of your link. See the example below.
 
 ``` <Link to="/not-active">Not Active </Link><br/> ```
 
 Note: Use the NavLink or Link when you need links that are routing to pages that belong to your application. For external links, a is preferrable.
 
-The anchor tag a: This is used for links outside your webpage.
+  - The anchor tag a: This is used for links outside your webpage.
 See the example below.
 ```<a href="https://www.educative.io/edpresso">Visit Edpresso </a> ```
 
-
-Using these components, you can define the routing configuration for your React application. For example, you might define a set of routes that map to different pages in your application:
+***Using these components, you can define the routing configuration for your React application. For example, you might define a set of routes that map to different pages in your application:***
 
 1.)Firstly we wrap the index component in <BroswerRouter>
   
