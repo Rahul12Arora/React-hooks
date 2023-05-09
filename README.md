@@ -190,7 +190,7 @@ The CSS can then be styled according to your choice inside the App.css file. Let
 
 ```
 
-    - Link: This is used when there is no special style or highlighting of your link. See the example below.
+- Link: This is used when there is no special style or highlighting of your link. See the example below.
 
 ``` <Link to="/not-active">Not Active </Link><br/> ```
 
