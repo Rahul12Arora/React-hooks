@@ -190,13 +190,13 @@ The CSS can then be styled according to your choice inside the App.css file. Let
 
 ```
 
-  - Link: This is used when there is no special style or highlighting of your link. See the example below.
+    - Link: This is used when there is no special style or highlighting of your link. See the example below.
 
 ``` <Link to="/not-active">Not Active </Link><br/> ```
 
 Note: Use the NavLink or Link when you need links that are routing to pages that belong to your application. For external links, a is preferrable.
 
-  - The anchor tag a: This is used for links outside your webpage.
+- The anchor tag a: This is used for links outside your webpage.
 See the example below.
 ```<a href="https://www.educative.io/edpresso">Visit Edpresso </a> ```
 
