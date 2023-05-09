@@ -159,6 +159,8 @@ install react router in your react app
 ```
 npm i react-router-dom
 ```
+<h2>Theory</h2>
+
 React Router DOM is a library that allows developers to implement client-side routing in their React applications. It provides a declarative way to handle routing and navigation, enabling users to move between different views or pages in a single-page application (SPA) without the need for a full page reload.
 
 React Router DOM is built on top of the React Router library, which provides a routing framework for React applications. The React Router DOM library adds support for the browser's DOM (Document Object Model), allowing developers to use standard HTML links and browser history APIs for navigation.
@@ -199,6 +201,8 @@ See the example below.
 ```<a href="https://www.educative.io/edpresso">Visit Edpresso </a> ```
 
 ***Using these components, you can define the routing configuration for your React application. For example, you might define a set of routes that map to different pages in your application:***
+
+<h2>Application</h2>
 
 1.)Firstly we wrap the index component in <BroswerRouter>
   
