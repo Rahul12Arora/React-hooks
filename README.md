@@ -175,7 +175,7 @@ The main components provided by React Router DOM are:
 
 - In ReactJS, there are three different kinds of links. These are NavLink, Link, and a links, and they all serve different purposes.
 
-NavLink: This is used when you want to highlight the current or active link. This is used with the activeClassName attribute, which enables it. See the example below.
+- NavLink: This is used when you want to highlight the current or active link. This is used with the activeClassName attribute, which enables it. See the example below.
 
 ``` <NavLink to="/home" activeClassName="active" >Home</NavLink><br/> ```
 The CSS can then be styled according to your choice inside the App.css file. Let’s make the text color red to make it simple.
