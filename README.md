@@ -588,3 +588,7 @@ const handleSubmit=async(e)=>{
     console.log(json)
    
 ```
+
+<h2> event </h2>
+
+**e.target represents the actual DOM element, so you can access other properties and attributes of the element as needed, such as e.target.name, e.target.id, or e.target.getAttribute('data-some-attribute').
